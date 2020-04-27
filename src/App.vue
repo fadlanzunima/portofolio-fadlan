@@ -27,7 +27,7 @@
 
 #nav {
   width: 100%;
-  height: 6rem;
+  height: 5rem;
   background: #b0acbe;
 
   a {
@@ -43,12 +43,12 @@
     display: flex;
     justify-content: flex-end;
     margin: 0;
-    padding: 2rem;
+    padding: 1.5rem;
 
     li {
       margin-left: 30px;
       list-style: none;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
 
       a {
         text-decoration: none;
