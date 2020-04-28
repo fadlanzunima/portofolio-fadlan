@@ -64,6 +64,7 @@ export default {
   position: relative;
   text-align: center;
   width: 50%;
+  margin-top: -8rem;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -159,7 +160,6 @@ export default {
     .btn-download {
       background-color: #378c3f;
       color: #fff;
-      opacity: 0.7;
       width: 10rem;
       height: 3rem;
       line-height: 3rem;
@@ -171,7 +171,7 @@ export default {
       transition: all ease 0.5s;
 
       &:hover {
-        opacity: 1;
+        background-color: #40a249;
         transition: all ease 0.5s;
       }
     }
