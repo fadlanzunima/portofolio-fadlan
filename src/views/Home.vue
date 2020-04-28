@@ -143,6 +143,7 @@ export default {
     }
 
     h3 {
+      letter-spacing: 1.5px;
       font-weight: 700;
       font-size: 1rem;
       padding-top: 0.5rem;
