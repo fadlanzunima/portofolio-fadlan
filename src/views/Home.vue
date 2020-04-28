@@ -193,14 +193,13 @@ export default {
       border-radius: 50%;
       background-color: #888;
       margin: 0 1rem;
-      opacity: 0.6;
 
       .svg-inline--fa {
         font-size: 2rem;
       }
 
       &:hover {
-        opacity: 1;
+        background-color: #979797;
         transform: scale(1.2);
 
         .tooltiptext {
