@@ -47,6 +47,15 @@
     max-width: 1024px;
   }
 
+  @keyframes fade-in {
+    from {
+      background-color: rgba(255, 255, 255, 0);
+    }
+    to {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
   .card-container {
     border: 0;
     border-radius: 0.1875rem;
@@ -55,8 +64,9 @@
     overflow: hidden;
     width: 100%;
     word-wrap: break-word;
-    background-color: rgba(255, 255, 255, 0.7);
     background-clip: border-box;
+    background-color: rgba(255, 255, 255, 0.7);
+    animation: fade-in 1s linear;
 
     .row {
       display: flex;

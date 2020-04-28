@@ -68,6 +68,17 @@ export default {
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  opacity: 1;
+  animation: fade-in 1s linear;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .bg-content::before {
