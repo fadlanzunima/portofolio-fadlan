@@ -24,7 +24,10 @@
                   <tr>: Sicincin, 11 Maret 1996</tr>
                   <tr>: Tangerang</tr>
                   <tr>: (+62) 852 7809 1373</tr>
-                  <tr>: fadlanzunima@gmail.com</tr>
+                  <tr>
+                    :
+                    <a href="mailto:fadlanzunima@gmail.com">fadlanzunima@gmail.com</a>
+                  </tr>
                 </td>
               </table>
             </div>
@@ -186,6 +189,11 @@ export default {
           font-size: 1.1rem;
           @media screen and (max-width: 1024px) {
             font-size: 0.7rem;
+          }
+
+          a {
+            text-decoration: none;
+            color: inherit;
           }
         }
       }
