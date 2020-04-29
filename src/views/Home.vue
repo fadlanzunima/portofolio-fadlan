@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="bg-content">
+    <div class="content">
       <div class="wrapper-content">
         <div class="img-user">
           <img
@@ -67,8 +67,6 @@ export default {
 .wrapper-content {
   position: relative;
   text-align: center;
-  width: 50%;
-  margin-top: -8rem;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -86,7 +84,7 @@ export default {
   }
 }
 
-.bg-content::before {
+.home::before {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 0;
@@ -99,31 +97,27 @@ export default {
 }
 
 .home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  position: absolute;
+  display: block;
   color: #fff;
+  background: url(https://images.pexels.com/photos/814499/pexels-photo-814499.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 
-  @media screen and (max-width: 1024px) {
-    height: 245vmin;
-    width: 138vmin;
-  }
-
-  .bg-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url(https://images.pexels.com/photos/814499/pexels-photo-814499.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  .content {
     position: absolute;
-    background-size: cover;
-    background-position: center center;
+    left: 50%;
+    bottom: 25%;
     width: 100%;
-    height: 100%;
-    z-index: -1;
+    transform: translate(-50%, -25%);
+
     @media screen and (max-width: 1024px) {
-      width: 31rem;
-      height: 56rem;
+      left: 50%;
+      bottom: 20%;
+      transform: translate(-50%, -20%);
     }
   }
 
@@ -208,8 +202,16 @@ export default {
       background-color: #888;
       margin: 0 1rem;
 
+      @media screen and (max-width: 1024px) {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
       .svg-inline--fa {
         font-size: 2rem;
+        @media screen and (max-width: 1024px) {
+          font-size: 1rem;
+        }
       }
 
       &:hover {
@@ -237,6 +239,11 @@ export default {
         bottom: 115%;
         left: 50%;
         margin-left: -48px;
+        @media screen and (max-width: 1024px) {
+          width: 3rem;
+          font-size: 7px;
+          margin-left: -24px;
+        }
       }
 
       .tooltiptext::after {

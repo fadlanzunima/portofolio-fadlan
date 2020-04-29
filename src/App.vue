@@ -16,23 +16,40 @@
         </ul>
       </div>
 
-      <div class="wrapper-mobile">
-        <div class="wrapper-nav">
-          <div class="title-logo">Portofolio</div>
-          <div class="logo-bars">
-            <i class="fas fa-bars"></i>
-          </div>
+      <div class="topnav">
+        <a href="#home" class="active">Portofolio</a>
+        <div id="myLinks" v-if="showMenu">
+          <router-link to="/">Home</router-link>
+          <router-link to="/about">About</router-link>
+          <router-link to="/skills">Skills</router-link>
         </div>
-        <div id="myLinks">
-          <a href="#news">News</a>
-          <a href="#contact">Contact</a>
-          <a href="#about">About</a>
-        </div>
+        <a href="#" class="icon" @click="menuMobile()">
+          <i class="fa fa-bars"></i>
+        </a>
       </div>
     </div>
     <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  data: function() {
+    return {
+      showMenu: false
+    };
+  },
+  methods: {
+    menuMobile() {
+      if (!this.showMenu) {
+        this.showMenu = true;
+      } else {
+        this.showMenu = false;
+      }
+    }
+  }
+};
+</script>
 
 <style lang="scss">
 #app {
@@ -43,12 +60,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #fbfafb;
-
-  @media screen and (max-width: 1024px) {
-    width: 22.5rem;
-    height: 40rem;
-    overflow: hidden;
-  }
 }
 
 #nav {
@@ -58,46 +69,41 @@
   background: transparent;
 
   //MOBILE NAV
-  .wrapper-mobile {
+  .topnav {
     display: none;
-
-    @media screen and (max-width: 1024px) {
+    @media screen and(max-width: 1024px) {
       display: block;
-      width: 30rem;
+      overflow: hidden;
+      background-color: #333;
+      position: relative;
     }
+  }
 
-    .wrapper-mobile a {
-      color: white;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-      display: block;
-    }
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
 
-    .wrapper-nav {
-      @media screen and (max-width: 1024px) {
-        display: flex;
-        flex-flow: row;
-        justify-content: space-between;
-        padding-top: 10px;
-        margin: 0px 5px;
-      }
-    }
+  .topnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 
-    .logo-bars {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #fff;
-      width: 2rem;
-      height: 2rem;
-      border-radius: 5px;
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+    padding: 14px;
+  }
 
-      .svg-inline--fa {
-        color: black;
-        font-size: 1rem;
-      }
-    }
+  .active {
+    background-color: #4caf50;
+    color: white;
   }
   //MOBILE NAV
 
