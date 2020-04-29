@@ -18,12 +18,12 @@
 
       <div class="topnav">
         <a href="#home" class="active">Portofolio</a>
-        <div id="myLinks" v-if="showMenu">
+        <div id="myLinks" ref="dropdown" @click="onLeave()">
           <router-link to="/">Home</router-link>
           <router-link to="/about">About</router-link>
           <router-link to="/skills">Skills</router-link>
         </div>
-        <a href="#" class="icon" @click="menuMobile()">
+        <a href="javascript:void(0)" class="icon" @mouseover="onOver">
           <i class="fa fa-bars"></i>
         </a>
       </div>
@@ -40,12 +40,11 @@ export default {
     };
   },
   methods: {
-    menuMobile() {
-      if (!this.showMenu) {
-        this.showMenu = true;
-      } else {
-        this.showMenu = false;
-      }
+    onOver() {
+      this.$refs.dropdown.style.display = "block";
+    },
+    onLeave() {
+      this.$refs.dropdown.style.display = "none";
     }
   }
 };
@@ -77,6 +76,10 @@ export default {
       background-color: #333;
       position: relative;
     }
+  }
+
+  #myLinks {
+    display: none;
   }
 
   .topnav a {
