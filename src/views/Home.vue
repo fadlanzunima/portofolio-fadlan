@@ -1,40 +1,44 @@
 <template>
   <div class="home">
-    <div class="bg-content"></div>
-    <div class="wrapper-content">
-      <div class="img-user">
-        <img
-          src="https://media-exp1.licdn.com/dms/image/C5103AQG7PA4Sq3hnVA/profile-displayphoto-shrink_200_200/0?e=1593648000&v=beta&t=QrvXyqp1Hx-Aqz6u0Lf6OJFlNG2FRjpSVDly2euD5wA"
-          alt="img"
-        />
-      </div>
-      <div class="txt-wrapper">
-        <h1>Fadlan Zunima</h1>
-        <h3>Frontend Developer</h3>
-      </div>
-      <div class="wrapper-btn">
-        <div class="btn-download">Download CV</div>
-      </div>
-      <div class="wrapper-social">
-        <div class="btn-round" @click="goToSocialMedia('https://id.linkedin.com/in/fadlanzunima')">
-          <span class="tooltiptext">Follow me on LinkdIn</span>
-          <i class="fab fa-linkedin"></i>
+    <div class="bg-content">
+      <div class="wrapper-content">
+        <div class="img-user">
+          <img
+            src="https://media-exp1.licdn.com/dms/image/C5103AQG7PA4Sq3hnVA/profile-displayphoto-shrink_200_200/0?e=1593648000&v=beta&t=QrvXyqp1Hx-Aqz6u0Lf6OJFlNG2FRjpSVDly2euD5wA"
+            alt="img"
+          />
         </div>
-        <div class="btn-round" @click="goToSocialMedia('https://www.facebook.com/fadlanzunima')">
-          <span class="tooltiptext">Follow me on Facebook</span>
-          <i class="fab fa-facebook"></i>
+        <div class="txt-wrapper">
+          <h1>Fadlan Zunima</h1>
+          <h3>Frontend Developer</h3>
         </div>
-        <div class="btn-round" @click="goToSocialMedia('https://twitter.com/alnzunima')">
-          <span class="tooltiptext">Follow me on Twitter</span>
-          <i class="fab fa-twitter"></i>
+        <div class="wrapper-btn">
+          <div class="btn-download">Download CV</div>
         </div>
-        <div class="btn-round" @click="goToSocialMedia('https://www.instagram.com/fdlnzunima/')">
-          <span class="tooltiptext">Follow me on Instagram</span>
-          <i class="fab fa-instagram"></i>
-        </div>
-        <div class="btn-round" @click="goToSocialMedia('https://github.com/fadlanzunima/')">
-          <span class="tooltiptext">Follow me on GitHub</span>
-          <i class="fab fa-github"></i>
+        <div class="wrapper-social">
+          <div
+            class="btn-round"
+            @click="goToSocialMedia('https://id.linkedin.com/in/fadlanzunima')"
+          >
+            <span class="tooltiptext">Follow me on LinkdIn</span>
+            <i class="fab fa-linkedin"></i>
+          </div>
+          <div class="btn-round" @click="goToSocialMedia('https://www.facebook.com/fadlanzunima')">
+            <span class="tooltiptext">Follow me on Facebook</span>
+            <i class="fab fa-facebook"></i>
+          </div>
+          <div class="btn-round" @click="goToSocialMedia('https://twitter.com/alnzunima')">
+            <span class="tooltiptext">Follow me on Twitter</span>
+            <i class="fab fa-twitter"></i>
+          </div>
+          <div class="btn-round" @click="goToSocialMedia('https://www.instagram.com/fdlnzunima/')">
+            <span class="tooltiptext">Follow me on Instagram</span>
+            <i class="fab fa-instagram"></i>
+          </div>
+          <div class="btn-round" @click="goToSocialMedia('https://github.com/fadlanzunima/')">
+            <span class="tooltiptext">Follow me on GitHub</span>
+            <i class="fab fa-github"></i>
+          </div>
         </div>
       </div>
     </div>
@@ -101,6 +105,11 @@ export default {
   height: 100vh;
   color: #fff;
 
+  @media screen and (max-width: 1024px) {
+    height: 245vmin;
+    width: 138vmin;
+  }
+
   .bg-content {
     display: flex;
     justify-content: center;
@@ -112,6 +121,10 @@ export default {
     width: 100%;
     height: 100%;
     z-index: -1;
+    @media screen and (max-width: 1024px) {
+      width: 31rem;
+      height: 56rem;
+    }
   }
 
   .img-user {

@@ -15,6 +15,20 @@
           </li>
         </ul>
       </div>
+
+      <div class="wrapper-mobile">
+        <div class="wrapper-nav">
+          <div class="title-logo">Portofolio</div>
+          <div class="logo-bars">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+        <div id="myLinks">
+          <a href="#news">News</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+        </div>
+      </div>
     </div>
     <router-view />
   </div>
@@ -29,6 +43,12 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #fbfafb;
+
+  @media screen and (max-width: 1024px) {
+    width: 22.5rem;
+    height: 40rem;
+    overflow: hidden;
+  }
 }
 
 #nav {
@@ -37,12 +57,60 @@
   height: 5rem;
   background: transparent;
 
+  //MOBILE NAV
+  .wrapper-mobile {
+    display: none;
+
+    @media screen and (max-width: 1024px) {
+      display: block;
+      width: 30rem;
+    }
+
+    .wrapper-mobile a {
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      display: block;
+    }
+
+    .wrapper-nav {
+      @media screen and (max-width: 1024px) {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        padding-top: 10px;
+        margin: 0px 5px;
+      }
+    }
+
+    .logo-bars {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 5px;
+
+      .svg-inline--fa {
+        color: black;
+        font-size: 1rem;
+      }
+    }
+  }
+  //MOBILE NAV
+
   .wrapper-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1376px;
     margin: 0 auto;
+
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
   }
 
   .title-logo {
