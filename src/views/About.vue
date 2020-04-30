@@ -212,6 +212,8 @@ $bluebell: #979fd0;
         font-weight: 700;
         color: black;
         font-size: 2rem;
+        margin-block-end: 0;
+        margin-block-start: 0;
       }
 
       p {
