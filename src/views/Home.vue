@@ -13,7 +13,7 @@
           <h3>Frontend Developer</h3>
         </div>
         <div class="wrapper-btn">
-          <div class="btn-download">Download CV</div>
+          <a class="btn-download" href="http://tiny.cc/fadlanCV" target="_blank">Download CV</a>
         </div>
         <div class="wrapper-social">
           <div
@@ -50,6 +50,10 @@
 // import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
+  data() {
+    return {};
+  },
+
   name: "Home",
   components: {
     // HelloWorld
@@ -58,7 +62,8 @@ export default {
   methods: {
     goToSocialMedia(link) {
       window.location.href = link;
-    }
+    },
+    downloadCV() {}
   }
 };
 </script>
@@ -166,6 +171,7 @@ export default {
     justify-content: center;
 
     .btn-download {
+      text-decoration: none;
       background-color: #378c3f;
       color: #fff;
       width: 10rem;

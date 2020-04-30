@@ -2,14 +2,18 @@
   <div class="about">
     <div class="content">
       <div class="container">
-        <div class="card-container">
-          <div class="row">
+        <div class="loading" v-if="isLoading">
+          <div class="fancy-spinner">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+        <div class="card-container" v-if="!isLoading">
+          <div class="row" v-for="(about, index) in arrayAbout" :key="index">
             <div class="about-me">
               <h1>About</h1>
-              <p>
-                Hello! I am Anthony Barnett. Web Developer, Graphic Designer and Photographer.
-                Creative CV is a HTML resume template for professionals. Built with Bootstrap 4, Now UI Kit and FontAwesome, this modern and responsive design template is perfect to showcase your portfolio, skills and experience
-              </p>
+              <p>{{about.about_desc}}</p>
             </div>
             <div class="basic-info">
               <h1>Basic Information</h1>
@@ -21,12 +25,12 @@
                   <tr>Email</tr>
                 </td>
                 <td>
-                  <tr>: Sicincin, 11 Maret 1996</tr>
-                  <tr>: Tangerang</tr>
-                  <tr>: (+62) 852 7809 1373</tr>
+                  <tr>: {{about.about_date_of_birth}}</tr>
+                  <tr>: {{about.about_adress}}</tr>
+                  <tr>: {{about.about_phone}}</tr>
                   <tr>
                     :
-                    <a href="mailto:fadlanzunima@gmail.com">fadlanzunima@gmail.com</a>
+                    <a v-bind:href="'mailto:' + about.about_adress">{{about.about_email}}</a>
                   </tr>
                 </td>
               </table>
@@ -40,14 +44,88 @@
 
 
 <script>
+import axios from "axios";
 export default {
+  data() {
+    return {
+      isLoading: false,
+      arrayAbout: []
+    };
+  },
+
   mounted: function() {
-    this.showMenu = false;
+    this.fetchAbout();
+  },
+  methods: {
+    fetchAbout() {
+      this.isLoading = true;
+      axios
+        .get(
+          "http://www.mocky.io/v2/5eaa733a2d00006b0026862d?mocky-delay=1000ms"
+        )
+        .then(response => {
+          this.arrayAbout = response.data.result;
+          this.isLoading = false;
+        });
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
+//LOADING
+$charade: #282a37;
+$bluebell: #979fd0;
+
+.loading {
+  background: transparent;
+}
+
+.fancy-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+
+  div {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+
+    &.ring {
+      border-width: 0.5rem;
+      border-style: solid;
+      border-color: transparent;
+      animation: 2s fancy infinite alternate;
+
+      &:nth-child(1) {
+        border-left-color: $bluebell;
+        border-right-color: $bluebell;
+      }
+      &:nth-child(2) {
+        border-top-color: $bluebell;
+        border-bottom-color: $bluebell;
+        animation-delay: 1s;
+      }
+    }
+
+    &.dot {
+      width: 1rem;
+      height: 1rem;
+      background: $bluebell;
+    }
+  }
+}
+
+@keyframes fancy {
+  to {
+    transform: rotate(360deg) scale(0.5);
+  }
+}
+//LOADING
+
 .about::before {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.4);
