@@ -30,7 +30,7 @@
                   <tr>: {{about.about_phone}}</tr>
                   <tr>
                     :
-                    <a v-bind:href="'mailto:' + about.about_adress">{{about.about_email}}</a>
+                    <a v-bind:href="'mailto:' + about.about_email">{{about.about_email}}</a>
                   </tr>
                 </td>
               </table>
