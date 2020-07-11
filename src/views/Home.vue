@@ -4,7 +4,7 @@
       <div class="wrapper-content">
         <div class="img-user">
           <img
-            src="https://media-exp1.licdn.com/dms/image/C5103AQG7PA4Sq3hnVA/profile-displayphoto-shrink_200_200/0?e=1593648000&v=beta&t=QrvXyqp1Hx-Aqz6u0Lf6OJFlNG2FRjpSVDly2euD5wA"
+            src="https://dci05.dewaweb.com:2083/cpsess8249166850/viewer/home%2fportofol%2fpublic_html%2ffadlan%2fimg/fadlan.png"
             alt="img"
           />
         </div>

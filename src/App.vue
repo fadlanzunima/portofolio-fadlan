@@ -13,6 +13,9 @@
           <li>
             <router-link to="/skills">Skills</router-link>
           </li>
+          <li>
+            <router-link to="/projects">Projects</router-link>
+          </li>
         </ul>
       </div>
 
@@ -22,6 +25,7 @@
           <router-link to="/">Home</router-link>
           <router-link to="/about">About</router-link>
           <router-link to="/skills">Skills</router-link>
+          <router-link to="/projects">Projects</router-link>
         </div>
         <a href="javascript:void(0)" class="icon" @mouseover="onOver">
           <i class="fa fa-bars"></i>

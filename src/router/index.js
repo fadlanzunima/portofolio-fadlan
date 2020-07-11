@@ -3,11 +3,11 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Skills from '../views/Skills.vue'
+import Projects from "../views/Projects.vue"
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'Home',
     component: Home,
@@ -25,6 +25,11 @@ const routes = [
     name: 'Skills',
     component: Skills,
   },
+  {
+    path: '/projects',
+    name: 'Projects',
+    component: Projects,
+  }
 ]
 
 const router = new VueRouter({
