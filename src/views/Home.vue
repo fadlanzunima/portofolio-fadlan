@@ -4,7 +4,7 @@
       <div class="wrapper-content">
         <div class="img-user">
           <img
-            src="https://media-exp1.licdn.com/dms/image/C5103AQG7PA4Sq3hnVA/profile-displayphoto-shrink_200_200/0?e=1593648000&v=beta&t=QrvXyqp1Hx-Aqz6u0Lf6OJFlNG2FRjpSVDly2euD5wA"
+            src="https://dci05.dewaweb.com:2083/cpsess8249166850/viewer/home%2fportofol%2fpublic_html%2ffadlan%2fimg/fadlan.png"
             alt="img"
           />
         </div>
@@ -135,6 +135,10 @@ export default {
       width: 9rem;
       height: 9rem;
       transition: all ease 1s;
+      @media screen and (max-width: 320px) {
+        width: 6rem;
+        height: 6rem;
+      }
     }
 
     img:hover {
@@ -152,6 +156,10 @@ export default {
       padding-top: 1.3rem;
       margin-block-start: 0;
       margin-block-end: 0;
+
+      @media screen and (max-width: 320px) {
+        font-size: 1.5rem;
+      }
     }
 
     h3 {
@@ -197,6 +205,10 @@ export default {
     position: absolute;
     bottom: -115px;
 
+    @media screen and (max-width: 320px) {
+      bottom: -80px;
+    }
+
     .btn-round {
       cursor: pointer;
       display: flex;
@@ -208,15 +220,24 @@ export default {
       background-color: #888;
       margin: 0 1rem;
 
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 1024px) and (min-width: 330px) {
         width: 2.5rem;
         height: 2.5rem;
       }
 
+      @media screen and (max-width: 320px) {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
       .svg-inline--fa {
         font-size: 2rem;
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 1024px) and (min-width: 330px) {
           font-size: 1rem;
+        }
+
+        @media screen and (max-width: 320px) {
+          font-size: 0.8rem;
         }
       }
 

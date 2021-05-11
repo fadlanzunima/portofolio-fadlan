@@ -30,7 +30,7 @@
                   <tr>: {{about.about_phone}}</tr>
                   <tr>
                     :
-                    <a v-bind:href="'mailto:' + about.about_adress">{{about.about_email}}</a>
+                    <a v-bind:href="'mailto:' + about.about_email">{{about.about_email}}</a>
                   </tr>
                 </td>
               </table>
@@ -61,7 +61,7 @@ export default {
       this.isLoading = true;
       axios
         .get(
-          "https://www.mocky.io/v2/5eaa733a2d00006b0026862d?mocky-delay=1000ms"
+          "http://www.mocky.io/v2/5eaa733a2d00006b0026862d?mocky-delay=1000ms"
         )
         .then(response => {
           this.arrayAbout = response.data.result;
