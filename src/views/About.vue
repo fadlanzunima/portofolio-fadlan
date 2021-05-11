@@ -61,7 +61,7 @@ export default {
       this.isLoading = true;
       axios
         .get(
-          "http://www.mocky.io/v2/5eaa733a2d00006b0026862d?mocky-delay=1000ms"
+          "https://www.mocky.io/v2/5eaa733a2d00006b0026862d?mocky-delay=1000ms"
         )
         .then(response => {
           this.arrayAbout = response.data.result;
